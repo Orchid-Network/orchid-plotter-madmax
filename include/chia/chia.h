@@ -1,18 +1,18 @@
 /*
- * chia.h
+ * orchid.h
  *
  *  Created on: May 24, 2021
  *      Author: mad
  */
 
-#ifndef INCLUDE_CHIA_CHIA_H_
-#define INCLUDE_CHIA_CHIA_H_
+#ifndef INCLUDE_ORCHID_ORCHID_H_
+#define INCLUDE_ORCHID_ORCHID_H_
 
 #include <chrono>
 #include <cstdint>
 #include <string>
 
-#include <chia/settings.h>
+#include <orchid/settings.h>
 
 
 // Unique plot id which will be used as a ChaCha8 key, and determines the PoSpace.
@@ -81,4 +81,4 @@ struct table_t {
 };
 
 
-#endif /* INCLUDE_CHIA_CHIA_H_ */
+#endif /* INCLUDE_ORCHID_ORCHID_H_ */

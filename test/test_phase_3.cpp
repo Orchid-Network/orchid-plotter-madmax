@@ -5,9 +5,9 @@
  *      Author: mad
  */
 
-#include <chia/phase3.hpp>
-#include <chia/DiskSort.hpp>
-#include <chia/DiskTable.h>
+#include <orchid/phase3.hpp>
+#include <orchid/DiskSort.hpp>
+#include <orchid/DiskTable.h>
 
 #include <iostream>
 

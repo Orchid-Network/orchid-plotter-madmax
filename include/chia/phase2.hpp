@@ -5,14 +5,14 @@
  *      Author: mad
  */
 
-#ifndef INCLUDE_CHIA_PHASE2_HPP_
-#define INCLUDE_CHIA_PHASE2_HPP_
+#ifndef INCLUDE_ORCHID_PHASE2_HPP_
+#define INCLUDE_ORCHID_PHASE2_HPP_
 
-#include <chia/phase2.h>
-#include <chia/DiskTable.h>
-#include <chia/ThreadPool.h>
+#include <orchid/phase2.h>
+#include <orchid/DiskTable.h>
+#include <orchid/ThreadPool.h>
 
-#include <chia/bitfield_index.hpp>
+#include <orchid/bitfield_index.hpp>
 
 
 namespace phase2 {
@@ -174,4 +174,4 @@ void compute(	const phase1::output_t& input, output_t& out,
 
 } // phase2
 
-#endif /* INCLUDE_CHIA_PHASE2_HPP_ */
+#endif /* INCLUDE_ORCHID_PHASE2_HPP_ */

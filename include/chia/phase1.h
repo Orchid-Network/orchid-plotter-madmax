@@ -5,13 +5,13 @@
  *      Author: mad
  */
 
-#ifndef INCLUDE_CHIA_PHASE1_H_
-#define INCLUDE_CHIA_PHASE1_H_
+#ifndef INCLUDE_ORCHID_PHASE1_H_
+#define INCLUDE_ORCHID_PHASE1_H_
 
-#include <chia/chia.h>
-#include <chia/entries.h>
-#include <chia/DiskSort.h>
-#include <chia/util.hpp>
+#include <orchid/orchid.h>
+#include <orchid/entries.h>
+#include <orchid/DiskSort.h>
+#include <orchid/util.hpp>
 
 #include <array>
 #include <vector>
@@ -63,7 +63,7 @@ template<int N>
 struct entry_xm : entry_x {
 	std::array<uint8_t, N> meta;
 
-#ifdef CHIA_K34
+#ifdef ORCHID_K34
 	static constexpr size_t disk_size = 11 + N;
 	
 	size_t read(const uint8_t* buf) {
@@ -110,7 +110,7 @@ struct entry_xm : entry_x {
 #endif
 };
 
-#ifdef CHIA_K34
+#ifdef ORCHID_K34
 typedef entry_xm<9>  entry_2;
 typedef entry_xm<17> entry_3;
 typedef entry_xm<17> entry_4;
@@ -129,7 +129,7 @@ struct entry_7 {
 	uintkx_t pos;		// 32 bit / 35 bit
 	uint16_t off;		// 10 bit
 	
-#ifdef CHIA_K34
+#ifdef ORCHID_K34
 	static constexpr size_t disk_size = 11;
 
 	void assign(const entry_7& entry) {
@@ -278,4 +278,4 @@ struct output_t {
 
 } // phase1
 
-#endif /* INCLUDE_CHIA_PHASE1_H_ */
+#endif /* INCLUDE_ORCHID_PHASE1_H_ */

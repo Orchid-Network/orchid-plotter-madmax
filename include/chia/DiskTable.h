@@ -5,12 +5,12 @@
  *      Author: mad
  */
 
-#ifndef INCLUDE_CHIA_DISKTABLE_H_
-#define INCLUDE_CHIA_DISKTABLE_H_
+#ifndef INCLUDE_ORCHID_DISKTABLE_H_
+#define INCLUDE_ORCHID_DISKTABLE_H_
 
-#include <chia/buffer.h>
-#include <chia/stdiox.hpp>
-#include <chia/ThreadPool.h>
+#include <orchid/buffer.h>
+#include <orchid/stdiox.hpp>
+#include <orchid/ThreadPool.h>
 
 #include <cstdio>
 
@@ -151,4 +151,4 @@ private:
 };
 
 
-#endif /* INCLUDE_CHIA_DISKTABLE_H_ */
+#endif /* INCLUDE_ORCHID_DISKTABLE_H_ */

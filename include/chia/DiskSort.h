@@ -5,11 +5,11 @@
  *      Author: mad
  */
 
-#ifndef INCLUDE_CHIA_DISKSORT_H_
-#define INCLUDE_CHIA_DISKSORT_H_
+#ifndef INCLUDE_ORCHID_DISKSORT_H_
+#define INCLUDE_ORCHID_DISKSORT_H_
 
-#include <chia/buffer.h>
-#include <chia/ThreadPool.h>
+#include <orchid/buffer.h>
+#include <orchid/ThreadPool.h>
 
 #include <vector>
 #include <string>
@@ -99,4 +99,4 @@ private:
 
 
 
-#endif /* INCLUDE_CHIA_DISKSORT_H_ */
+#endif /* INCLUDE_ORCHID_DISKSORT_H_ */

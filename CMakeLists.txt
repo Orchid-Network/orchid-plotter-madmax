@@ -16,11 +16,11 @@ if(NOT CMAKE_BUILD_TYPE)
   )
 endif()
 
-project(chia-plotter C CXX ASM)
+project(orchid-plotter C CXX ASM)
 
 include(FetchContent)
 
-option(CHIA_PLOTTER_BUILD_TESTS "" off)
+option(ORCHID_PLOTTER_BUILD_TESTS "" off)
 
 if(MSVC)
   enable_language(ASM_MASM)
@@ -37,7 +37,7 @@ set(TARGET_ARCH ${CMAKE_HOST_SYSTEM_PROCESSOR})
 message(STATUS "${PROJECT_NAME} - Architecture: ${TARGET_ARCH}")
 
 FetchContent_Declare(bls_signatures
-  GIT_REPOSITORY https://github.com/Chia-Network/bls-signatures.git
+  GIT_REPOSITORY https://github.com/Orchid-Network/bls-signatures.git
   GIT_TAG "b3acfe5ecd23660f8ce21a2aafb9d14c3263fef7"
 )
 set(BUILD_BLS_PYTHON_BINDINGS "0" CACHE STRING "")
@@ -111,12 +111,12 @@ add_library(fse
   lib/FSE/lib/hist.c
 )
 
-add_library(chia_plotter
+add_library(orchid_plotter
   lib/chacha8.c
   src/settings.cpp
 )
 
-target_link_libraries(chia_plotter
+target_link_libraries(orchid_plotter
   PRIVATE
     blake3
     fse
@@ -129,75 +129,75 @@ if(MSVC)
     PUBLIC
       ${uint128_t_SOURCE_DIR}
   )
-  target_link_libraries(chia_plotter
+  target_link_libraries(orchid_plotter
     PUBLIC
       uint128
   )
 else()
   find_package(Threads REQUIRED)
-  target_link_libraries(chia_plotter
+  target_link_libraries(orchid_plotter
     PRIVATE
       Threads::Threads
   )
 endif()
 
-add_executable(chia_plot src/chia_plot.cpp)
+add_executable(orchid_plot src/orchid_plot.cpp)
 
-target_include_directories(chia_plot
+target_include_directories(orchid_plot
   PRIVATE
     ${libbech32_SOURCE_DIR}/include/libbech32
 )
 
 if(MSVC)
-  set_source_files_properties(src/chia_plot.cpp
+  set_source_files_properties(src/orchid_plot.cpp
     PROPERTIES
       COMPILE_OPTIONS "/bigobj"
   )
 endif()
 
-target_link_libraries(chia_plot
+target_link_libraries(orchid_plot
   PRIVATE
-    chia_plotter
+    orchid_plotter
     bls
 )
 
-add_executable(chia_plot_k34 src/chia_plot.cpp)
+add_executable(orchid_plot_k34 src/orchid_plot.cpp)
 
-target_include_directories(chia_plot_k34
+target_include_directories(orchid_plot_k34
   PRIVATE
     ${libbech32_SOURCE_DIR}/include/libbech32
 )
 
-target_compile_definitions(chia_plot_k34
+target_compile_definitions(orchid_plot_k34
   PUBLIC
-    CHIA_K34=1
+    ORCHID_K34=1
 )
 
-target_link_libraries(chia_plot_k34
+target_link_libraries(orchid_plot_k34
   PRIVATE
-    chia_plotter
+    orchid_plotter
     bls
 )
 
-if(CHIA_PLOTTER_BUILD_TESTS)
+if(ORCHID_PLOTTER_BUILD_TESTS)
   add_executable(test_copy test/test_copy.cpp)
-  target_link_libraries(test_copy PRIVATE chia_plotter)
+  target_link_libraries(test_copy PRIVATE orchid_plotter)
 
   add_executable(test_disk_sort test/test_disk_sort.cpp)
-  target_link_libraries(test_disk_sort PRIVATE chia_plotter)
+  target_link_libraries(test_disk_sort PRIVATE orchid_plotter)
 
   add_executable(test_phase_1 test/test_phase_1.cpp)
-  target_link_libraries(test_phase_1 PRIVATE chia_plotter)
+  target_link_libraries(test_phase_1 PRIVATE orchid_plotter)
 
   add_executable(test_phase_2 test/test_phase_2.cpp)
-  target_link_libraries(test_phase_2 PRIVATE chia_plotter)
+  target_link_libraries(test_phase_2 PRIVATE orchid_plotter)
 
   add_executable(test_phase_3 test/test_phase_3.cpp)
-  target_link_libraries(test_phase_3 PRIVATE chia_plotter)
+  target_link_libraries(test_phase_3 PRIVATE orchid_plotter)
 
   add_executable(test_phase_4 test/test_phase_4.cpp)
-  target_link_libraries(test_phase_4 PRIVATE chia_plotter)
+  target_link_libraries(test_phase_4 PRIVATE orchid_plotter)
 
   add_executable(check_phase_1 test/check_phase_1.cpp)
-  target_link_libraries(check_phase_1 PRIVATE chia_plotter)
+  target_link_libraries(check_phase_1 PRIVATE orchid_plotter)
 endif()

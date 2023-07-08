@@ -5,13 +5,13 @@
  *      Author: mad
  */
 
-#ifndef INCLUDE_CHIA_PHASE3_HPP_
-#define INCLUDE_CHIA_PHASE3_HPP_
+#ifndef INCLUDE_ORCHID_PHASE3_HPP_
+#define INCLUDE_ORCHID_PHASE3_HPP_
 
-#include <chia/chia.h>
-#include <chia/phase3.h>
-#include <chia/encoding.hpp>
-#include <chia/DiskTable.h>
+#include <orchid/orchid.h>
+#include <orchid/phase3.h>
+#include <orchid/encoding.hpp>
+#include <orchid/DiskTable.h>
 
 #include <list>
 
@@ -571,4 +571,4 @@ void compute(	phase2::output_t& input, output_t& out,
 
 } // phase3
 
-#endif /* INCLUDE_CHIA_PHASE3_HPP_ */
+#endif /* INCLUDE_ORCHID_PHASE3_HPP_ */

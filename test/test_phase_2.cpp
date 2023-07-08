@@ -5,8 +5,8 @@
  *      Author: mad
  */
 
-#include <chia/phase2.hpp>
-#include <chia/DiskSort.hpp>
+#include <orchid/phase2.hpp>
+#include <orchid/DiskSort.hpp>
 
 #include <iostream>
 

@@ -5,11 +5,11 @@
  *      Author: mad
  */
 
-#include <chia/phase4.h>
-#include <chia/DiskSort.hpp>
+#include <orchid/phase4.h>
+#include <orchid/DiskSort.hpp>
 
-#include <chia/encoding.hpp>
-#include <chia/util.hpp>
+#include <orchid/encoding.hpp>
+#include <orchid/util.hpp>
 
 
 namespace phase4 {
